@@ -305,9 +305,9 @@ void RenderSettings::DidActivate(bool firstActivation, bool addedToHierarchy, bo
 
     AddConfigValueIncrementEnum(graphics, getConfig().Resolution, resolutionStrings);
 
-    AddConfigValueSliderIncrement(graphics, getConfig().Bitrate, 0, 2500, 2500, 2500, 25000);
+    AddConfigValueSliderIncrement(graphics, getConfig().Bitrate, 0, 2500, 2500, 2500, 60000);
 
-    AddConfigValueIncrementFloat(graphics, getConfig().FOV, 0, 5, 30, 90);
+    AddConfigValueIncrementFloat(graphics, getConfig().FOV, 0, 5, 30, 180);
 
     AddConfigValueIncrementInt(graphics, getConfig().FPS, 5, 5, 120);
 
