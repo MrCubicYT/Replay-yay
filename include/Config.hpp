@@ -1,6 +1,6 @@
-#pragma once
+#pragma once //make sure file is included once
 
-#include "config-utils/shared/config-utils.hpp"
+#include "config-utils/shared/config-utils.hpp" //include config utils
 
 const std::vector<std::pair<int, int>> resolutions = {
     {640, 480},
@@ -8,19 +8,19 @@ const std::vector<std::pair<int, int>> resolutions = {
     {1920, 1080},
     {2560, 1440},
     {3840, 2160}
-};
+}; //unchangeable resolution settings
 
 const std::vector<std::string> cameraModes = {
     "Normal",
     "Smooth Camera",
     "Third Person"
-};
+}; //unchangeable camera modes
 
 enum struct CameraMode {
     Headset,
     Smooth,
     ThirdPerson
-};
+}; //creatable struct that can be headset, smooth or third person
 
 enum struct InputButton {
     None,
@@ -32,24 +32,24 @@ enum struct InputButton {
     JoystickDown,
     JoystickLeft,
     JoystickRight
-};
+}; //creatable struct
 
 enum struct InputController {
     None,
     Left,
     Right
-};
+}; //creatable struct that can be none left or right
 
 DECLARE_JSON_CLASS(Button,
     VALUE(int, Button)
     VALUE(int, Controller)
-)
+) //declare json button and controller
 DECLARE_JSON_CLASS(ButtonPair,
     VALUE(int, ForwardButton)
     VALUE(int, ForwardController)
     VALUE(int, BackButton)
     VALUE(int, BackController)
-)
+) //declare json f and back
 
 DECLARE_JSON_CLASS(LevelSelection,
     VALUE(std::string, ID)
@@ -58,7 +58,7 @@ DECLARE_JSON_CLASS(LevelSelection,
     VALUE(std::string, Characteristic)
     VALUE(int, Category)
     VALUE(int, ReplayIndex)
-)
+) //declare json random shit
 
 DECLARE_CONFIG(Config,
     CONFIG_VALUE(Version, int, "Config Version", 1)
@@ -104,4 +104,4 @@ DECLARE_CONFIG(Config,
 
     CONFIG_VALUE(ThirdPerPos, UnityEngine::Vector3, "Third Person Position", UnityEngine::Vector3(0, 2, -0.5))
     CONFIG_VALUE(ThirdPerRot, UnityEngine::Vector3, "Third Person Rotation", {})
-)
+) //declare config, name, type, description, IDFK
